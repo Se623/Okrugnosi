@@ -20,8 +20,8 @@ class Square1(QMainWindow):
         self.update()
 
     def paintEvent(self, event):
-        color = "yellow"
         if self.flag:
+            color = "yellow"
             qp = QPainter()
             qp.begin(self)
             qp.setPen(QColor(color))
@@ -29,6 +29,7 @@ class Square1(QMainWindow):
             self.x, self.y = random.randint(100, 800 - 100), random.randint(100, 900 - 100)
             qp.drawEllipse(self.x, self.y, self.size, self.size)
             qp.end()
+            self.flag = False
 
 
 def except_hook(cls, exception, traceback):
